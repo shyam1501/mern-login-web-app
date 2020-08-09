@@ -6,6 +6,7 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 
 const app = express();
+const socketio = require('socket.io');
 
 // Bodyparser middleware
 app.use(
@@ -38,4 +39,4 @@ app.use("/api/users", users);
 
 const port = process.env.PORT || 5000;
 
-app.listen(port, () => console.log(`Server up and running on port ${port} !`));
+const io = socketio(app.listen(port, () => console.log(`Server up and running on port ${port} !`)));
