@@ -1,4 +1,4 @@
 module.exports = {
-  mongoURI: "YOUR_MONGO_URI_HERE",
+  mongoURI: "mongodb://shyamKri:Shyam@8871@ds139370.mlab.com:39370/mern-app",
   secretOrKey: "secret"
 };
