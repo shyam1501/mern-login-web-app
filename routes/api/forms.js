@@ -4,6 +4,7 @@ const socketConnection = require('../../socketserver');
 const Form = require("../../models/Form");
 const User = require("../../models/User");
 const { ObjectID } = require("mongodb");
+const { query } = require("express");
 
 router.get('/', async (req, res) => {
   try {
@@ -15,7 +16,11 @@ router.get('/', async (req, res) => {
       limit = parseInt(req.query.limit, 10);
       skipSize = parseInt(limit * (page - 1), 10);
     }
-    const forms = await Form.find({}).populate({
+    let condition = {};
+    if(req.query && req.query.status){
+      condition = {status: req.query.status}
+    }
+    const forms = await Form.find(condition).populate({
       path: 'assignedBy',
       select: ['name','email'],
       model: User
