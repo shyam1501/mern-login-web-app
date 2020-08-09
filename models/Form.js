@@ -24,12 +24,12 @@ const FormSchema = new Schema({
         required: true
     },
     createdOn: {
-        type: String,
+        type: Date,
         required: true,
         default: Date.now
     },
     updatedOn: {
-        type: String,
+        type: Date,
         required: true,
         default: Date.now
     }
