@@ -1,0 +1,9 @@
+.notification {
+    display: inline-block;
+    position: relative;
+    padding: 0 6px;
+    background: #ee6e73;
+    border-radius: 45px;
+    font-size: 1.3em;
+    cursor: pointer;
+}
